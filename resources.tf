@@ -6,7 +6,7 @@ resource "aws_iam_user" "newemployees" {
 }
 
 resource "aws_iam_user_login_profile" "example" {
-  count = 3
+  count = 5
   user   = element(var.iam_names,count.index)
   pgp_key = "keybase:some_person_that_exists"
   password_reset_required = true

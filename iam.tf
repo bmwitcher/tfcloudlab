@@ -18,7 +18,7 @@ resource "aws_iam_access_key" "newemp" {
 resource "aws_iam_user_login_profile" "example" {
   count = length(var.iam_names)
   user   = element(var.iam_names,count.index)
-  pgp_key = "keybase:element(var.iam_names,count.index)" #receiving an error attached to this attribute (Error: error retrieving GPG Key during IAM User Login Profile)
+  pgp_key = "keybase:some_person_that-exists" #receiving an error attached to this attribute (Error: error retrieving GPG Key during IAM User Login Profile)
   password_reset_required = true
 }
 */

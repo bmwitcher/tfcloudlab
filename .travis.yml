@@ -14,13 +14,7 @@ jobs:
       script:
         - terraform init 
         - terraform plan -out build.plan 
-
-    - stage: terraform apply # Merge our PR - Deploy it!
-      if: type IN (push) and branch = master
-      script:
-        - terraform init 
-        - terraform plan -out build.plan
-        - terraform apply build.plan
+        - terrafrom apply build.plan
 
 # Filter to only run this pipeline when it involves actions against the master branch
 branches:

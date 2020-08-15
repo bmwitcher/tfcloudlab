@@ -13,8 +13,7 @@ jobs:
       if: type IN (pull_request)
       script:
         - terraform init 
-        - terraform plan -out build.plan 
-        - terraform apply build.plan
+        - terraform destroy build.plan
 
 # Filter to only run this pipeline when it involves actions against the master branch
 branches:

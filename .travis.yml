@@ -20,7 +20,7 @@ jobs:
       script:
         - terraform init 
         - terraform plan 
-        - terraform apply build.plan
+        - terraform apply
 
 # Filter to only run this pipeline when it involves actions against the master branch
 branches:
